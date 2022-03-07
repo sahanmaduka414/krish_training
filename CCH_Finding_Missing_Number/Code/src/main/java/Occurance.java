@@ -61,6 +61,6 @@ public class Occurance {
                 }
             }
         }
-        return null;
+        return i;
     }
 }

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MissingNumber {
-    static void bubbleSort(int[] arr) {
+    static int[] bubbleSort(int[] arr) {
         int n = arr.length;
         int temp = 0;
         for (int i = 0; i < n; i++) {
@@ -15,36 +15,27 @@ public class MissingNumber {
 
             }
         }
+        return arr;
     }
 
-    static void missingnumber(int ar[], int size) {
+    static int[] missingnumber(int[] ar, int size) {
 
-        int a = 0,
-                b = size - 1;
-        int mid = 0;
-        boolean flag= false;
 
+        int b = size - 1;
+        int iq = 0;
+        int[] in;
         for (int i = 0; i < b; i++) {
 
-            if(ar[i+1]-ar[i]==2){
+            if((ar[i+1]-ar[i])==2){
                 System.out.println("one number is missing");
-            }else if(ar[i+1]-ar[i]==2){
+                System.out.println(ar[i]+1);
+                iq =  ar[i]+1;
+            }else if((ar[i+1]-ar[i])>=3){
                 System.out.println("two number is missing");
-
             }
-
-
-            if (ar[i+1]== ar[i]+1) {
-                System.out.println(ar[i]);
-
-            } else {
-                System.out.println("Missing Number :"+ar[i]);
-
-            }
-
         }
-
-
+        in= new int[]{iq};
+        return in;
     }
 
     public static void main(String[] args) {
