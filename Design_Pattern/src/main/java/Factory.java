@@ -1,9 +1,10 @@
 public class Factory {
- public static void main(String[] args) {
+ 
+    public static void main(String[] args) {
         BasicCombo comboplan = new ComboCreationLogic();
-        SmartPhone ram = comboplan.createCombo("ram");
-        SmartPhone camera = comboplan.createCombo("camera");
-        SmartPhone processor = comboplan.createCombo("processor");
+        SmartPhone samsung = comboplan.createCombo("samsung");
+        SmartPhone nokia = comboplan.createCombo("nokia");
+        SmartPhone huawei = comboplan.createCombo("huawei");
     }
 
 }
@@ -75,13 +76,13 @@ class ComboCreationLogic extends BasicCombo {
     public SmartPhone createCombo(String comboype) {
         SmartPhone combo;
         switch (comboype) {
-            case "ram":
+            case "samsung":
                 combo = new Samsung();
                 break;
-            case "camera":
+            case "nokia":
                 combo = new Nokia();
                 break;
-            case "processor":
+            case "huawei":
                 combo = new Huawei();
                 break;
             default:
