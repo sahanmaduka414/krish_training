@@ -1,0 +1,27 @@
+
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'    enabled-by-default: false
+spring:  neo4j:    security:      hostname-verification-enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample?
+                         autoReconnect=true&
+                         useSSL=false&
+
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+     
+      ddl-auto: update
+  

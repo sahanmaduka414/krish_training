@@ -1,0 +1,11 @@
+
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'    enabled-by-default: false
+spring:  neo4j:    security:      hostname-verification-enabled: false
