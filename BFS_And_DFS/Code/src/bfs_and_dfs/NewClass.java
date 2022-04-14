@@ -13,43 +13,42 @@ import java.util.Stack;
  *
  * @author sahan maduka
  */
-public class Graph {
-
+public class NewClass {
+      private int in;
     private LinkedList<Vertex> link;
 
   
 
     void addEdge(Vertex start, Vertex end) {
         start.addEdge(end);
+        
     }
 
-    void BFS(Vertex s) {
-     
+  
 
-        Queue<Vertex> queue = new LinkedList<Vertex>();
+    void DFS(Vertex s) {
+      
 
-        s.visited= true;
+        Stack<Vertex> stack = new Stack<Vertex>();
+        
+        
+        stack.add(s);
+        while (!stack.isEmpty()) {
+            s = stack.pop();
+            System.out.println(s.data +" ");
 
-        queue.add(s);
-
-        while (!queue.isEmpty()) {
-
-            s = queue.poll();
-            System.out.print(s.data + " ");
-
-            
             for (Vertex edge : s.getEdges()) {
                 if(!edge.visited){
                     s.visited = true;
-                    queue.add(edge);
+                    stack.add(edge);
                 }
             }
             
+            
            
+
         }
     }
-
-    
 
     public static void main(String args[]) {
 
@@ -63,7 +62,7 @@ public class Graph {
 
 
 
-        Graph g=new Graph();
+        NewClass g=new NewClass();
         
         g.addEdge(v, v1);
         g.addEdge(v, v2);
@@ -74,9 +73,7 @@ public class Graph {
         g.addEdge(v4, v6);
        
 
-        System.out.println("BFS");
-        g.BFS(v);
-       
+        System.out.println("DFS");
+        g.DFS(v);
     }
 }
-
