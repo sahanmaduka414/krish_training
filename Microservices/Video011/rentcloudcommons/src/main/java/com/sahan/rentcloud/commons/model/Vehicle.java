@@ -1,20 +1,19 @@
-package com.sahan.rentcommons.commons.model;
+package com.sahan.rentcloud.commons.model;
 
-
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
 
-    private String make;
-    private String model;
-    private String type;
-    private int year;
+    String make;
+    String model;
+    String type;
+    int year;
 
     public int getId() {
         return id;
@@ -55,6 +54,4 @@ public class Vehicle {
     public void setYear(int year) {
         this.year = year;
     }
-
-
 }
